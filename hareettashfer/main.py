@@ -1,14 +1,11 @@
-from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication
+from PyQt5 import QtCore, QtGui, QtWidgets
+from hareettashfer_ui import Ui_HareetTashfer
 import sys
 
-# Load the UI file
-Form, Window = uic.loadUiType("ui\hareettashfer.ui")
-
-if __name__ == '__main__':
-    app = QApplication([])
-    window = Window()
-    form = Form()
-    form.setupUi(window)
-    window.show()
-    sys.exit(app.exec())
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    HareetTashfer = QtWidgets.QMainWindow()
+    ui = Ui_HareetTashfer()
+    ui.setupUi(HareetTashfer)
+    HareetTashfer.show()
+    sys.exit(app.exec_())

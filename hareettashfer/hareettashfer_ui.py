@@ -252,13 +252,3 @@ class Ui_HareetTashfer(object):
         self.L_0.setText(_translate("HareetTashfer", "تشفير \" \""))
         self.LT_1.setText(_translate("HareetTashfer", "ادخل العربي"))
         self.LT_2.setText(_translate("HareetTashfer", "بعد التحويل"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    HareetTashfer = QtWidgets.QMainWindow()
-    ui = Ui_HareetTashfer()
-    ui.setupUi(HareetTashfer)
-    HareetTashfer.show()
-    sys.exit(app.exec_())
