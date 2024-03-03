@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui/hareettashfer.ui'
+# Form implementation generated from reading ui file '.\ui\hareettashfer.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.10
 #
@@ -16,6 +16,10 @@ class Ui_HareetTashfer(object):
         HareetTashfer.setObjectName("HareetTashfer")
         HareetTashfer.setEnabled(True)
         HareetTashfer.resize(488, 510)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(".\\ui\\HareetTashferLogo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        HareetTashfer.setWindowIcon(icon)
+        HareetTashfer.setAutoFillBackground(True)
         HareetTashfer.setTabShape(QtWidgets.QTabWidget.Rounded)
         self.centralwidget = QtWidgets.QWidget(HareetTashfer)
         self.centralwidget.setObjectName("centralwidget")
@@ -225,7 +229,7 @@ class Ui_HareetTashfer(object):
         self.L_6.setText(_translate("HareetTashfer", "تشفير \"ح\""))
         self.L_4.setText(_translate("HareetTashfer", "تشفير \"ث\""))
         self.L_5.setText(_translate("HareetTashfer", "تشفير \"ج\""))
-        self.L_1.setText(_translate("HareetTashfer", "تشفير \"أ\""))
+        self.L_1.setText(_translate("HareetTashfer", "تشفير \"ا\""))
         self.L_3.setText(_translate("HareetTashfer", "تشفير \"ت\""))
         self.L_2.setText(_translate("HareetTashfer", "تشفير \"ب\""))
         self.L_8.setText(_translate("HareetTashfer", "تشفير \"د\""))

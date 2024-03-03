@@ -16,6 +16,13 @@
   <property name="windowTitle">
    <string>HareetTashfer - Arabic to Code Converter</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>HareetTashferLogo.png</normaloff>HareetTashferLogo.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
   <property name="tabShape">
    <enum>QTabWidget::Rounded</enum>
   </property>
@@ -138,7 +145,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>تشفير &quot;أ&quot;</string>
+     <string>تشفير &quot;ا&quot;</string>
     </property>
    </widget>
    <widget class="QLabel" name="L_3">

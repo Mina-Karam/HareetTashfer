@@ -6,6 +6,9 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
         super().__init__()
         self.setupUi(self)
 
+        # Set the window to be fixed size
+        self.setFixedSize(self.size())
+        
         # Connect the convertArabicToCode method to the clicked signal of the Convert button
         self.Convert.clicked.connect(self.convertArabicToCode)
 
@@ -24,7 +27,7 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
 
         # Get the user-inputted keys for each Arabic character
         key_mapping = {
-            'أ': self.T_1.toPlainText(),
+            'ا': self.T_1.toPlainText(),
             'ب': self.T_2.toPlainText(),
             'ت': self.T_3.toPlainText(),
             'ث': self.T_4.toPlainText(),
