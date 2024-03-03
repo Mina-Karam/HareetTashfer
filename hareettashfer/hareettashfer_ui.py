@@ -93,7 +93,7 @@ class Ui_HareetTashfer(object):
         self.L_11.setGeometry(QtCore.QRect(210, 60, 51, 20))
         self.L_11.setObjectName("L_11")
         self.L_13 = QtWidgets.QLabel(self.centralwidget)
-        self.L_13.setGeometry(QtCore.QRect(90, 60, 51, 20))
+        self.L_13.setGeometry(QtCore.QRect(80, 60, 61, 20))
         self.L_13.setObjectName("L_13")
         self.L_12 = QtWidgets.QLabel(self.centralwidget)
         self.L_12.setGeometry(QtCore.QRect(150, 60, 51, 20))
@@ -111,7 +111,7 @@ class Ui_HareetTashfer(object):
         self.T_12.setGeometry(QtCore.QRect(160, 80, 41, 31))
         self.T_12.setObjectName("T_12")
         self.L_14 = QtWidgets.QLabel(self.centralwidget)
-        self.L_14.setGeometry(QtCore.QRect(30, 60, 51, 20))
+        self.L_14.setGeometry(QtCore.QRect(20, 60, 61, 20))
         self.L_14.setObjectName("L_14")
         self.T_9 = QtWidgets.QTextEdit(self.centralwidget)
         self.T_9.setGeometry(QtCore.QRect(340, 80, 41, 31))
@@ -138,7 +138,7 @@ class Ui_HareetTashfer(object):
         self.T_16.setGeometry(QtCore.QRect(340, 130, 41, 31))
         self.T_16.setObjectName("T_16")
         self.L_15 = QtWidgets.QLabel(self.centralwidget)
-        self.L_15.setGeometry(QtCore.QRect(390, 110, 51, 20))
+        self.L_15.setGeometry(QtCore.QRect(380, 110, 61, 20))
         self.L_15.setObjectName("L_15")
         self.L_18 = QtWidgets.QLabel(self.centralwidget)
         self.L_18.setGeometry(QtCore.QRect(210, 110, 51, 20))
@@ -256,3 +256,13 @@ class Ui_HareetTashfer(object):
         self.L_0.setText(_translate("HareetTashfer", "تشفير \" \""))
         self.LT_1.setText(_translate("HareetTashfer", "ادخل العربي"))
         self.LT_2.setText(_translate("HareetTashfer", "بعد التحويل"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    HareetTashfer = QtWidgets.QMainWindow()
+    ui = Ui_HareetTashfer()
+    ui.setupUi(HareetTashfer)
+    HareetTashfer.show()
+    sys.exit(app.exec_())
