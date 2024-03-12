@@ -8,8 +8,9 @@ class Ui_HareetTashfer(object):
         HareetTashfer.setEnabled(True)
         HareetTashfer.resize(488, 510)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(".\\ui\\HareetTashferLogo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(".\\HareetTashferLogo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         HareetTashfer.setWindowIcon(icon)
+        HareetTashfer.setLayoutDirection(QtCore.Qt.RightToLeft)
         HareetTashfer.setAutoFillBackground(True)
         HareetTashfer.setTabShape(QtWidgets.QTabWidget.Rounded)
         self.centralwidget = QtWidgets.QWidget(HareetTashfer)
@@ -87,7 +88,7 @@ class Ui_HareetTashfer(object):
         self.L_13.setGeometry(QtCore.QRect(80, 60, 61, 20))
         self.L_13.setObjectName("L_13")
         self.L_12 = QtWidgets.QLabel(self.centralwidget)
-        self.L_12.setGeometry(QtCore.QRect(150, 60, 51, 20))
+        self.L_12.setGeometry(QtCore.QRect(140, 60, 61, 20))
         self.L_12.setObjectName("L_12")
         self.L_10 = QtWidgets.QLabel(self.centralwidget)
         self.L_10.setGeometry(QtCore.QRect(270, 60, 51, 20))
@@ -213,7 +214,7 @@ class Ui_HareetTashfer(object):
 
     def retranslateUi(self, HareetTashfer):
         _translate = QtCore.QCoreApplication.translate
-        HareetTashfer.setWindowTitle(_translate("HareetTashfer", "HareetTashfer - Arabic to Code Converter"))
+        HareetTashfer.setWindowTitle(_translate("HareetTashfer", "حريت تشفير - أداه لتحويل العربي الي شفرة"))
         self.Copy.setText(_translate("HareetTashfer", "انسخ"))
         self.Convert.setText(_translate("HareetTashfer", "حول"))
         self.L_7.setText(_translate("HareetTashfer", "تشفير \"خ\""))
@@ -261,6 +262,9 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
 
         # Connect the Copy button to the copy method
         self.Copy.clicked.connect(self.copyToClipboard)
+
+        self.Copy.setStyleSheet("background-color: #4CAF50; color: white;")
+        self.Convert.setStyleSheet("background-color: #008CBA; color: white;")
 
     def arabic_to_code(self, text, key):
         # Convert the Arabic text to code

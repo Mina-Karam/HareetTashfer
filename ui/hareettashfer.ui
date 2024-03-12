@@ -14,11 +14,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>HareetTashfer - Arabic to Code Converter</string>
+   <string>حريت تشفير - أداه لتحويل العربي الي شفرة</string>
   </property>
   <property name="windowIcon">
    <iconset>
     <normaloff>HareetTashferLogo.png</normaloff>HareetTashferLogo.png</iconset>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::RightToLeft</enum>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -306,9 +309,9 @@
    <widget class="QLabel" name="L_12">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>140</x>
       <y>60</y>
-      <width>51</width>
+      <width>61</width>
       <height>20</height>
      </rect>
     </property>
