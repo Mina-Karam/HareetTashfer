@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets 
 from PyQt5.QtWidgets import QMessageBox
 
-from hareettashfer_ui import Ui_HareetTashfer
+from HareetTashferGUI import Ui_HareetTashfer
 
 class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
     def __init__(self):

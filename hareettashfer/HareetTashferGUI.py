@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\hareettashfer.ui'
+# Form implementation generated from reading ui file 'hareettashfer.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.10
 #
@@ -17,7 +17,7 @@ class Ui_HareetTashfer(object):
         HareetTashfer.setEnabled(True)
         HareetTashfer.resize(488, 510)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(".\\HareetTashferLogo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("images/HareetTashferIcon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         HareetTashfer.setWindowIcon(icon)
         HareetTashfer.setLayoutDirection(QtCore.Qt.RightToLeft)
         HareetTashfer.setAutoFillBackground(True)

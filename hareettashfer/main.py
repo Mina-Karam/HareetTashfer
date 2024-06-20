@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets 
 import sys
 
-from hareettashfer_app import HareetTashferApp
+from HareetTashferApp import HareetTashferApp
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

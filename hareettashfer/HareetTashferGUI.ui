@@ -18,7 +18,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>HareetTashferLogo.png</normaloff>HareetTashferLogo.png</iconset>
+    <normaloff>images/HareetTashferIcon.png</normaloff>images/HareetTashferIcon.png</iconset>
   </property>
   <property name="layoutDirection">
    <enum>Qt::RightToLeft</enum>

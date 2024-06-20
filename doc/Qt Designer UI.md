@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project contains a Qt Designer UI file (`hareettashfer.ui`) which needs to be converted to a Python file. The Python file will be used to create the graphical user interface (GUI) defined in the `.ui` file.
+This project contains a Qt Designer UI file (`HareetTashferGUI.ui`) which needs to be converted to a Python file. The Python file will be used to create the graphical user interface (GUI) defined in the `.ui` file.
 
 ## Prerequisites
 
@@ -34,17 +34,17 @@ pip install PyQt6
 ### Using the Command Line
 
 1. Open a command prompt or terminal.
-2. Navigate to the directory containing your `hareettashfer.ui` file.
+2. Navigate to the directory containing your `HareetTashferGUI.ui` file.
 3. Run the following command for PyQt5:
 
     ```bash
-    pyuic5 -x hareettashfer.ui -o hareettashfer.py
+    pyuic5 -x HareetTashferGUI.ui -o HareetTashferGUI.py
     ```
 
     or for PyQt6:
 
     ```bash
-    pyuic6 -x hareettashfer.ui -o hareettashfer.py
+    pyuic6 -x HareetTashferGUI.ui -o HareetTashferGUI.py
     ```
 
 ### Using a Python Script
@@ -56,8 +56,8 @@ For PyQt5:
 ```python
 from PyQt5 import uic
 
-with open('hareettashfer.py', 'w', encoding='utf-8') as py_file:
-    uic.compileUi('hareettashfer.ui', py_file)
+with open('HareetTashferGUI.py', 'w', encoding='utf-8') as py_file:
+    uic.compileUi('HareetTashferGUI.ui', py_file)
 ```
 
 For PyQt6:
@@ -65,8 +65,8 @@ For PyQt6:
 ```python
 from PyQt6 import uic
 
-with open('hareettashfer.py', 'w', encoding='utf-8') as py_file:
-    uic.compileUi('hareettashfer.ui', py_file)
+with open('HareetTashferGUI.py', 'w', encoding='utf-8') as py_file:
+    uic.compileUi('HareetTashferGUI.ui', py_file)
 ```
 
 ## Running the Generated Python File
@@ -74,21 +74,21 @@ with open('hareettashfer.py', 'w', encoding='utf-8') as py_file:
 After converting the `.ui` file to a `.py` file, you can run it using Python:
 
 ```bash
-python hareettashfer.py
+python HareetTashferGUI.py
 ```
 
-This will launch the GUI defined in the `hareettashfer.ui` file.
+This will launch the GUI defined in the `HareetTashferGUI.ui` file.
 
 ## Additional Information
 
 - The `-x` option in the `pyuic` command generates a Python file that can be executed as a standalone script.
 - The `-o` option specifies the output filename.
-- Ensure you are in the same directory as the `hareettashfer.ui` file when running the conversion commands.
+- Ensure you are in the same directory as the `HareetTashferGUI.ui` file when running the conversion commands.
 
 ## Troubleshooting
 
 - If you encounter any issues with missing modules, ensure that PyQt5 or PyQt6 is correctly installed.
-- Verify the path to the `hareettashfer.ui` file if you receive a file not found error.
+- Verify the path to the `HareetTashferGUI.ui` file if you receive a file not found error.
 
 ## References
 
