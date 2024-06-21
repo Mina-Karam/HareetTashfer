@@ -1,7 +1,8 @@
-from PyQt5 import QtWidgets 
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtWidgets import QMessageBox, QLabel, QHBoxLayout, QPushButton, QWidget
 
 from HareetTashferGUI import Ui_HareetTashfer
+import webbrowser
 
 class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
     def __init__(self):
@@ -12,13 +13,19 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
         self.setFixedSize(self.size())
         
         # Connect the convertArabicToCode method to the clicked signal of the Convert button
-        self.Convert.clicked.connect(self.convertArabicToCode)
+        self.convertButton.clicked.connect(self.convertArabicToCode)
 
         # Connect the Copy button to the copy method
-        self.Copy.clicked.connect(self.copyToClipboard)
+        self.copyButton.clicked.connect(self.copyToClipboard)
 
-        self.Copy.setStyleSheet("background-color: #4CAF50; color: white;")
-        self.Convert.setStyleSheet("background-color: #008CBA; color: white;")
+        self.copyButton.setStyleSheet("background-color: #4CAF50; color: white;")
+        self.convertButton.setStyleSheet("background-color: #008CBA; color: white;")
+
+        # Add buttons for project links
+        self.facebookButton.clicked.connect(lambda: self.openUrl("https://www.facebook.com/minakaram.me/"))
+        self.linkedinButton.clicked.connect(lambda: self.openUrl("https://www.linkedin.com/in/mina-karam/"))
+        self.githubButton.clicked.connect(lambda: self.openUrl("https://github.com/Mina-Karam/"))
+        self.repoButton.clicked.connect(lambda: self.openUrl("https://github.com/Mina-Karam/HareetTashfer"))
 
     def arabic_to_code(self, text, key):
         # Convert the Arabic text to code
@@ -94,3 +101,6 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
         clipboard.setText(self.T_29.toPlainText())
 
         print(f"Copied to Clipboard: {self.T_29.toPlainText()}")
+    
+    def openUrl(self, url):
+        webbrowser.open(url)

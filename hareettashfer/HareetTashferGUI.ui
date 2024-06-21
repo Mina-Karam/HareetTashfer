@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>488</width>
-    <height>510</height>
+    <height>562</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="Copy">
+   <widget class="QPushButton" name="copyButton">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -39,11 +39,19 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="text">
-     <string>انسخ</string>
+     <string>إنسخ</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Convert">
+   <widget class="QPushButton" name="convertButton">
     <property name="geometry">
      <rect>
       <x>280</x>
@@ -51,6 +59,11 @@
       <width>151</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>حول</string>
@@ -746,27 +759,119 @@
    <widget class="QLabel" name="LT_1">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>370</x>
       <y>259</y>
-      <width>61</width>
+      <width>81</width>
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>ادخل العربي</string>
+     <string>إدخل العربي</string>
     </property>
    </widget>
    <widget class="QLabel" name="LT_2">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>140</x>
       <y>260</y>
-      <width>61</width>
+      <width>81</width>
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>بعد التحويل</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="footerLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>490</y>
+      <width>441</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Made with Love ♥ | Mina Karam | Um El-Nour Scout Group</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="facebookButton">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>530</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Facebook</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="linkedinButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>530</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>LinkedIn</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="githubButton">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>530</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>GitHub</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="repoButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>530</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Project Repository</string>
     </property>
    </widget>
   </widget>
