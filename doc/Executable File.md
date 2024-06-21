@@ -40,11 +40,16 @@ Before you begin, ensure the following are installed on your system:
 3. **Run PyInstaller**:
    - Execute PyInstaller with the following command:
      ```bash
-     pyinstaller --onefile --add-data "images/HareetTashferIcon.png;images" --name HareetTashfer main.py
+     pyinstaller --onefile --windowed --add-data "images/HareetTashferIcon.png;images" --add-data "LICENSE;." --version-file version.txt --name HareetTashfer main.py
      ```
-     - `--onefile`: Bundles everything into a single executable file.
-     - `--add-data "images/HareetTashferIcon.png;images"`: Specifies inclusion of `HareetTashferIcon.png` from the `images` folder relative to the executable.
-     - `--name HareetTashfer`: Names the generated executable file as `HareetTashfer.exe` (on Windows).
+     Here’s a breakdown of each option and their functions:
+      - `--onefile`: This option bundles everything into a single executable file.
+      - `--windowed`: This runs the application without showing a console window (useful for GUI applications).
+      - `--add-data "images/HareetTashferIcon.png;images"`: Specifies that `HareetTashferIcon.png` located in the `images` directory should be included in the bundled executable. The `;images` part means that `images` directory will be copied to the root directory of the executable.
+      - `--add-data "LICENSE;."`: Adds the `LICENSE` file to the root directory of the executable.
+      - `--version-file version.txt`: Includes version information from `version.txt` into the executable.
+      - `--name HareetTashfer`: Names the generated executable file as `HareetTashfer` (or `HareetTashfer.exe` on Windows).
+
 
 4. **Locate Your Executable**:
    - After PyInstaller completes the process, find the executable in the `dist` directory within your project folder.

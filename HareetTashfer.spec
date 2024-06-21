@@ -1,16 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-added_files = [
-    ('images/HareetTashferIcon.png', 'images'),
-    ('LICENSE', '.'),
-    ('version.txt', '.'),
-]
 
 a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=added_files,
+    datas=[('images/HareetTashferIcon.png', 'images'), ('LICENSE', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -33,7 +28,7 @@ exe = EXE(
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=True,
+    console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,

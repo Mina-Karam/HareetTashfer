@@ -13,7 +13,7 @@ VSVersionInfo(
     StringFileInfo([
       StringTable(
         '040904E4', [
-          StringStruct('CompanyName', 'Mina Karam'),
+          StringStruct('CompanyName', 'HareetTashfer'),
           StringStruct('FileDescription', 'HareetTashfer is a simple executable that converts the Arabic language to code by adding to each character.'),
           StringStruct('FileVersion', '1.1.0.0'),
           StringStruct('InternalName', 'HareetTashfer'),
