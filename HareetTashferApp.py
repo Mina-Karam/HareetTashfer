@@ -64,7 +64,7 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
 
         if non_convertible_found:
             # Display a warning message
-            message = f"الحروف الي انت مستخدمها دي مش هتتحول: {', '.join(non_convertible_found)}"
+            message = f"الحروف التي لن تتحول: {', '.join(non_convertible_found)}"
             QMessageBox.warning(self, "Warning", message)
 
         # Get the user-inputted keys for each Arabic character
