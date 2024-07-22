@@ -34,11 +34,33 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
         return code_sequence
 
     def convertArabicToCode(self):
-        # Replace this with your actual conversion logic
         arabic_text = self.T_30.toPlainText()
 
-        non_convertible_chars = 'ءؤئآإ،'
+        non_convertible_chars = '،'
         non_convertible_found = [char for char in arabic_text if char in non_convertible_chars]
+
+        # Define the base key mapping
+        base_key_mapping = {
+            'ا', 'آ', 'أ', 'إ', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ',
+            'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي', 'ى', ' ', 'ؤ', 'ء', 'ئ', 'ة'
+        }
+
+        # Check for characters not in the base key mapping
+        for char in arabic_text:
+            if char not in base_key_mapping:
+                non_convertible_found.append(char)
+
+        # Check optional characters and add them to non_convertible_found if their text inputs are empty
+        optional_chars = {
+            'ؤ': self.T_34.toPlainText(),
+            'ء': self.T_31.toPlainText(),
+            'ئ': self.T_0.toPlainText(),
+            'ة': self.T_32.toPlainText(),
+        }
+
+        for char, key in optional_chars.items():
+            if char in arabic_text and not key:
+                non_convertible_found.append(char)
 
         if non_convertible_found:
             # Display a warning message
@@ -48,6 +70,9 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
         # Get the user-inputted keys for each Arabic character
         key_mapping = {
             'ا': self.T_1.toPlainText(),
+            'آ': self.T_1.toPlainText(),
+            'أ': self.T_1.toPlainText(),
+            'إ': self.T_1.toPlainText(),
             'ب': self.T_2.toPlainText(),
             'ت': self.T_3.toPlainText(),
             'ث': self.T_4.toPlainText(),
@@ -75,8 +100,21 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
             'ه': self.T_26.toPlainText(),
             'و': self.T_27.toPlainText(),
             'ي': self.T_28.toPlainText(),
-            ' ': self.T_0.toPlainText(),
+            'ى': self.T_28.toPlainText(),
+            ' ': self.T_33.toPlainText()
         }
+
+        # Add optional characters if their text inputs are not empty
+        for char, key in optional_chars.items():
+            if key:  # Only add to key_mapping if the key is not empty
+                key_mapping[char] = key
+
+        # Check if any required key mapping is not defined
+        missing_mappings = [char for char, key in key_mapping.items() if not key]
+        if missing_mappings:
+            message = f"الحروف التالية ليس لها تعيين: {', '.join(missing_mappings)}"
+            QMessageBox.critical(self, "Error", message)
+            return
 
         print("Key Mapping:")
         for char, key in key_mapping.items():

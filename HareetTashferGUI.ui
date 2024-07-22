@@ -753,7 +753,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>تشفير &quot; &quot;</string>
+     <string>تشفير &quot;ئ&quot;</string>
     </property>
    </widget>
    <widget class="QLabel" name="LT_1">
@@ -872,6 +872,98 @@
     </property>
     <property name="text">
      <string>Project Repository</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="L_29">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>210</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>تشفير &quot;ء&quot;</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="T_31">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>230</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="L_30">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>210</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>تشفير &quot;ة&quot;</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="T_32">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>230</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="L_31">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>210</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>تشفير &quot; &quot;</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="T_33">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>230</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="L_32">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>210</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>تشفير &quot;ؤ&quot;</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="T_34">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>230</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
     </property>
    </widget>
   </widget>
