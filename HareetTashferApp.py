@@ -1,8 +1,8 @@
 from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtWidgets import QMessageBox, QLabel, QHBoxLayout, QPushButton, QWidget
-
+from PyQt5.QtWidgets import QMessageBox, QHBoxLayout, QPushButton, QWidget
 from HareetTashferGUI import Ui_HareetTashfer
 import webbrowser
+import json
 
 class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
     def __init__(self):
@@ -27,10 +27,12 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
         self.githubButton.clicked.connect(lambda: self.openUrl("https://github.com/Mina-Karam/"))
         self.repoButton.clicked.connect(lambda: self.openUrl("https://github.com/Mina-Karam/HareetTashfer"))
 
+        self.OpenCode.triggered.connect(self.load_input_from_file)
+        self.SaveCode.triggered.connect(self.save_input_to_file)
+
     def arabic_to_code(self, text, key):
         # Convert the Arabic text to code
         code_sequence = [f'({key[char]})' if char in key else ' ' for char in text]
-
         return code_sequence
 
     def convertArabicToCode(self):
@@ -68,46 +70,7 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
             QMessageBox.warning(self, "Warning", message)
 
         # Get the user-inputted keys for each Arabic character
-        key_mapping = {
-            'ا': self.T_1.toPlainText(),
-            'آ': self.T_1.toPlainText(),
-            'أ': self.T_1.toPlainText(),
-            'إ': self.T_1.toPlainText(),
-            'ب': self.T_2.toPlainText(),
-            'ت': self.T_3.toPlainText(),
-            'ث': self.T_4.toPlainText(),
-            'ج': self.T_5.toPlainText(),
-            'ح': self.T_6.toPlainText(),
-            'خ': self.T_7.toPlainText(),
-            'د': self.T_8.toPlainText(),
-            'ذ': self.T_9.toPlainText(),
-            'ر': self.T_10.toPlainText(),
-            'ز': self.T_11.toPlainText(),
-            'س': self.T_12.toPlainText(),
-            'ش': self.T_13.toPlainText(),
-            'ص': self.T_14.toPlainText(),
-            'ض': self.T_15.toPlainText(),
-            'ط': self.T_16.toPlainText(),
-            'ظ': self.T_17.toPlainText(),
-            'ع': self.T_18.toPlainText(),
-            'غ': self.T_19.toPlainText(),
-            'ف': self.T_20.toPlainText(),
-            'ق': self.T_21.toPlainText(),
-            'ك': self.T_22.toPlainText(),
-            'ل': self.T_23.toPlainText(),
-            'م': self.T_24.toPlainText(),
-            'ن': self.T_25.toPlainText(),
-            'ه': self.T_26.toPlainText(),
-            'و': self.T_27.toPlainText(),
-            'ي': self.T_28.toPlainText(),
-            'ى': self.T_28.toPlainText(),
-            ' ': self.T_33.toPlainText()
-        }
-
-        # Add optional characters if their text inputs are not empty
-        for char, key in optional_chars.items():
-            if key:  # Only add to key_mapping if the key is not empty
-                key_mapping[char] = key
+        key_mapping = self.get_key_mapping()
 
         # Check if any required key mapping is not defined
         missing_mappings = [char for char, key in key_mapping.items() if not key]
@@ -142,3 +105,80 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
     
     def openUrl(self, url):
         webbrowser.open(url)
+
+    def get_key_mapping(self):
+        # Return the key mapping for Arabic characters
+        return {
+            'ا': self.T_1.toPlainText(),
+            'آ': self.T_1.toPlainText(),
+            'أ': self.T_1.toPlainText(),
+            'إ': self.T_1.toPlainText(),
+            'ب': self.T_2.toPlainText(),
+            'ت': self.T_3.toPlainText(),
+            'ث': self.T_4.toPlainText(),
+            'ج': self.T_5.toPlainText(),
+            'ح': self.T_6.toPlainText(),
+            'خ': self.T_7.toPlainText(),
+            'د': self.T_8.toPlainText(),
+            'ذ': self.T_9.toPlainText(),
+            'ر': self.T_10.toPlainText(),
+            'ز': self.T_11.toPlainText(),
+            'س': self.T_12.toPlainText(),
+            'ش': self.T_13.toPlainText(),
+            'ص': self.T_14.toPlainText(),
+            'ض': self.T_15.toPlainText(),
+            'ط': self.T_16.toPlainText(),
+            'ظ': self.T_17.toPlainText(),
+            'ع': self.T_18.toPlainText(),
+            'غ': self.T_19.toPlainText(),
+            'ف': self.T_20.toPlainText(),
+            'ق': self.T_21.toPlainText(),
+            'ك': self.T_22.toPlainText(),
+            'ل': self.T_23.toPlainText(),
+            'م': self.T_24.toPlainText(),
+            'ن': self.T_25.toPlainText(),
+            'ه': self.T_26.toPlainText(),
+            'و': self.T_27.toPlainText(),
+            'ي': self.T_28.toPlainText(),
+            'ى': self.T_28.toPlainText(),
+            ' ': self.T_33.toPlainText(),
+            'ؤ': self.T_34.toPlainText(),
+            'ء': self.T_31.toPlainText(),
+            'ئ': self.T_0.toPlainText(),
+            'ة': self.T_32.toPlainText()
+        }
+
+    def save_input_to_file(self):
+        # Get the user-inputted keys for each Arabic character
+        key_mapping = self.get_key_mapping()
+
+        # Open a file dialog to save the file
+        options = QtWidgets.QFileDialog.Options()
+        file_name, _ = QtWidgets.QFileDialog.getSaveFileName(self, "Save File", "", "JSON Files (*.json);;All Files (*)", options=options)
+        if file_name:
+            with open(file_name, 'w', encoding='utf-8') as file:
+                json.dump(key_mapping, file, ensure_ascii=False, indent=4)
+    
+    def load_input_from_file(self):
+        options = QtWidgets.QFileDialog.Options()
+        file_name, _ = QtWidgets.QFileDialog.getOpenFileName(self, "Open File", "", "JSON Files (*.json);;All Files (*)", options=options)
+        if file_name:
+            with open(file_name, 'r', encoding='utf-8') as file:
+                key_mapping = json.load(file)
+
+            # Set the text for each T_x based on the loaded data
+            mapping_fields = {
+                'ا': self.T_1, 'آ': self.T_1, 'أ': self.T_1, 'إ': self.T_1,
+                'ب': self.T_2, 'ت': self.T_3, 'ث': self.T_4, 'ج': self.T_5,
+                'ح': self.T_6, 'خ': self.T_7, 'د': self.T_8, 'ذ': self.T_9,
+                'ر': self.T_10, 'ز': self.T_11, 'س': self.T_12, 'ش': self.T_13,
+                'ص': self.T_14, 'ض': self.T_15, 'ط': self.T_16, 'ظ': self.T_17,
+                'ع': self.T_18, 'غ': self.T_19, 'ف': self.T_20, 'ق': self.T_21,
+                'ك': self.T_22, 'ل': self.T_23, 'م': self.T_24, 'ن': self.T_25,
+                'ه': self.T_26, 'و': self.T_27, 'ي': self.T_28, 'ى': self.T_28,
+                ' ': self.T_33, 'ؤ': self.T_34, 'ء': self.T_31, 'ئ': self.T_0, 'ة': self.T_32
+            }
+
+            for char, field in mapping_fields.items():
+                if char in key_mapping:
+                    field.setPlainText(key_mapping[char])

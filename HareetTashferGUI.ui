@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>488</width>
-    <height>562</height>
+    <height>585</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -967,6 +967,59 @@
     </property>
    </widget>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>488</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>ملف</string>
+    </property>
+    <addaction name="OpenCode"/>
+    <addaction name="SaveCode"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>امثلة شفرات</string>
+    </property>
+    <addaction name="Numbering_Code"/>
+    <addaction name="Opposite_Numbering_Code"/>
+    <addaction name="Jesus_Code"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <action name="OpenCode">
+   <property name="text">
+    <string>فتح شفرة</string>
+   </property>
+  </action>
+  <action name="SaveCode">
+   <property name="text">
+    <string>تسجيل شفرة</string>
+   </property>
+  </action>
+  <action name="Numbering_Code">
+   <property name="text">
+    <string>شفرة رقمية</string>
+   </property>
+  </action>
+  <action name="Opposite_Numbering_Code">
+   <property name="text">
+    <string>شفرة رقمية عكسية</string>
+   </property>
+  </action>
+  <action name="Jesus_Code">
+   <property name="text">
+    <string>شفرة يسوع</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
