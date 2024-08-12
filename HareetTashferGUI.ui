@@ -983,6 +983,7 @@
     <addaction name="OpenCode"/>
     <addaction name="SaveCode"/>
     <addaction name="separator"/>
+    <addaction name="Clean"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
@@ -1018,6 +1019,11 @@
   <action name="Jesus_Code">
    <property name="text">
     <string>شفرة يسوع</string>
+   </property>
+  </action>
+  <action name="Clean">
+   <property name="text">
+    <string>مسح التشفير</string>
    </property>
   </action>
  </widget>

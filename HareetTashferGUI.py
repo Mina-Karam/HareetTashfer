@@ -294,9 +294,12 @@ class Ui_HareetTashfer(object):
         self.Opposite_Numbering_Code.setObjectName("Opposite_Numbering_Code")
         self.Jesus_Code = QtWidgets.QAction(HareetTashfer)
         self.Jesus_Code.setObjectName("Jesus_Code")
+        self.Clean = QtWidgets.QAction(HareetTashfer)
+        self.Clean.setObjectName("Clean")
         self.menu.addAction(self.OpenCode)
         self.menu.addAction(self.SaveCode)
         self.menu.addSeparator()
+        self.menu.addAction(self.Clean)
         self.menu_3.addAction(self.Numbering_Code)
         self.menu_3.addAction(self.Opposite_Numbering_Code)
         self.menu_3.addAction(self.Jesus_Code)
@@ -358,6 +361,7 @@ class Ui_HareetTashfer(object):
         self.Numbering_Code.setText(_translate("HareetTashfer", "شفرة رقمية"))
         self.Opposite_Numbering_Code.setText(_translate("HareetTashfer", "شفرة رقمية عكسية"))
         self.Jesus_Code.setText(_translate("HareetTashfer", "شفرة يسوع"))
+        self.Clean.setText(_translate("HareetTashfer", "مسح التشفير"))
 
 
 if __name__ == "__main__":
