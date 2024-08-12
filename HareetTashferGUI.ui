@@ -980,8 +980,8 @@
     <property name="title">
      <string>ملف</string>
     </property>
-    <addaction name="OpenCode"/>
-    <addaction name="SaveCode"/>
+    <addaction name="Open_Code"/>
+    <addaction name="Save_Code"/>
     <addaction name="separator"/>
     <addaction name="Clean"/>
    </widget>
@@ -992,18 +992,30 @@
     <addaction name="Numbering_Code"/>
     <addaction name="Opposite_Numbering_Code"/>
     <addaction name="Jesus_Code"/>
+    <addaction name="Arabic_Morse_Code"/>
+    <addaction name="separator"/>
+    <addaction name="XBOX_Code"/>
+    <addaction name="Semaphore_Squares_Code"/>
+    <addaction name="Semaphore_Power_Code"/>
+    <addaction name="Braille_Code"/>
+    <addaction name="Arabic_Char_Code"/>
+    <addaction name="Number_Addition_Code"/>
+    <addaction name="Clock_Code"/>
+    <addaction name="Arabic_English_Code"/>
+    <addaction name="Coordinate_Code"/>
+    <addaction name="Binary_Morse_Code"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_3"/>
   </widget>
-  <action name="OpenCode">
+  <action name="Open_Code">
    <property name="text">
     <string>فتح شفرة</string>
    </property>
   </action>
-  <action name="SaveCode">
+  <action name="Save_Code">
    <property name="text">
-    <string>تسجيل شفرة</string>
+    <string>حفظ شفرة</string>
    </property>
   </action>
   <action name="Numbering_Code">
@@ -1024,6 +1036,64 @@
   <action name="Clean">
    <property name="text">
     <string>مسح التشفير</string>
+   </property>
+  </action>
+  <action name="Arabic_Morse_Code">
+   <property name="text">
+    <string>شفرة مورس عربي</string>
+   </property>
+  </action>
+  <action name="XBOX_Code">
+   <property name="text">
+    <string>شفرة دراع الاكس بوكس</string>
+   </property>
+  </action>
+  <action name="Semaphore_Squares_Code">
+   <property name="text">
+    <string>شفرة سيمافور مربعات</string>
+   </property>
+  </action>
+  <action name="Semaphore_Power_Code">
+   <property name="text">
+    <string>شفرة سيمافور رقم أس رقم</string>
+   </property>
+   <property name="toolTip">
+    <string>شفرة سيمافور رقم أس رقم</string>
+   </property>
+  </action>
+  <action name="Braille_Code">
+   <property name="text">
+    <string>شفرة برايل</string>
+   </property>
+  </action>
+  <action name="Arabic_Char_Code">
+   <property name="text">
+    <string>شفرة الحروف العربي</string>
+   </property>
+  </action>
+  <action name="Number_Addition_Code">
+   <property name="text">
+    <string>شفرة ارقام وجمعها</string>
+   </property>
+  </action>
+  <action name="Clock_Code">
+   <property name="text">
+    <string>شفرة الساعة</string>
+   </property>
+  </action>
+  <action name="Arabic_English_Code">
+   <property name="text">
+    <string>شفرة الانجلش عربي</string>
+   </property>
+  </action>
+  <action name="Coordinate_Code">
+   <property name="text">
+    <string>شفرة الاحداثيات</string>
+   </property>
+  </action>
+  <action name="Binary_Morse_Code">
+   <property name="text">
+    <string>شفرة مورس اعداد ثنائية</string>
    </property>
   </action>
  </widget>

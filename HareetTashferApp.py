@@ -28,14 +28,25 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
         self.githubButton.clicked.connect(lambda: self.openUrl("https://github.com/Mina-Karam/"))
         self.repoButton.clicked.connect(lambda: self.openUrl("https://github.com/Mina-Karam/HareetTashfer"))
 
-        self.OpenCode.triggered.connect(self.load_input_from_file)
-        self.SaveCode.triggered.connect(self.save_input_to_file)
+        self.Open_Code.triggered.connect(self.load_input_from_file)
+        self.Save_Code.triggered.connect(self.save_input_to_file)
         self.Clean.triggered.connect(self.clear_text_fields)
 
         # Connect custom codes
         self.Numbering_Code.triggered.connect(lambda: self.load_code(NUMBERING_CODE))
         self.Opposite_Numbering_Code.triggered.connect(lambda: self.load_code(OPPOSITE_NUMBERING_CODE))
         self.Jesus_Code.triggered.connect(lambda: self.load_code(JESUS_CODE))
+        self.Arabic_Morse_Code.triggered.connect(lambda: self.load_code(ARABIC_MORSE_CODE))
+        self.XBOX_Code.triggered.connect(lambda: self.load_code(XBOX_CODE))
+        self.Semaphore_Squares_Code.triggered.connect(lambda: self.load_code(SEMAPHORE_SQUARES_CODE))
+        self.Semaphore_Power_Code.triggered.connect(lambda: self.load_code(SEMAPHORE_POWER_CODE, show_warning=True))
+        self.Braille_Code.triggered.connect(lambda: self.load_code(BRAILE_CODE))
+        self.Arabic_Char_Code.triggered.connect(lambda: self.load_code(ARABIC_CHAR_CODE))
+        self.Number_Addition_Code.triggered.connect(lambda: self.load_code(NUMBER_ADDITION_CODE))
+        self.Clock_Code.triggered.connect(lambda: self.load_code(CLOCK_CODE, show_warning=True))
+        self.Arabic_English_Code.triggered.connect(lambda: self.load_code(ARABIC_ENGLISH_CODE))
+        self.Coordinate_Code.triggered.connect(lambda: self.load_code(COORDINATE_CODE))
+        self.Binary_Morse_Code.triggered.connect(lambda: self.load_code(BINARY_MORSE_CODE))
 
         # Create a mapping dictionary for fields
         self.mapping_fields = {
@@ -139,11 +150,15 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
                 if char in self.mapping_fields:
                     self.mapping_fields[char].setPlainText(key)
 
-    def load_code(self, code_dict):
+    def load_code(self, code_dict, show_warning=False):
         for char, code in code_dict.items():
             if char in self.mapping_fields:
                 text_field = self.mapping_fields[char]
                 text_field.setPlainText(code)
+        
+        if show_warning:
+            message = f"الشفرة دي هتحتاج تدخل منك من خلال ميكروسوف ورد"
+            QMessageBox.warning(self, "Warning", message)
     
     def clear_text_fields(self):
         for field in self.mapping_fields.values():
