@@ -158,7 +158,7 @@ class HareetTashferApp(QtWidgets.QMainWindow, Ui_HareetTashfer):
         
         if show_warning:
             message = f"الشفرة دي هتحتاج تدخل منك من خلال ميكروسوف ورد"
-            QMessageBox.warning(self, "Warning", message)
+            QMessageBox.warning(self, "تحذير", message)
     
     def clear_text_fields(self):
         for field in self.mapping_fields.values():
