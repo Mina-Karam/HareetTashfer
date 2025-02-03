@@ -1,8 +1,27 @@
 from flask import Flask, request, jsonify, render_template
-from predefined_codes import *
+from predefined_codes import (
+    NUMBERING_CODE, OPPOSITE_NUMBERING_CODE, JESUS_CODE, ARABIC_MORSE_CODE,
+    XBOX_CODE, SEMAPHORE_SQUARES_CODE, SEMAPHORE_POWER_CODE, BRAILE_CODE,
+    ARABIC_CHAR_CODE, NUMBER_ADDITION_CODE, CLOCK_CODE, ARABIC_ENGLISH_CODE,
+    COORDINATE_CODE, BINARY_MORSE_CODE
+)
 import json
 
 app = Flask(__name__)
+
+# Mapping of Arabic characters to their respective keys
+MAPPING_FIELDS = {
+    'ا': 'T_1', 'آ': 'T_1', 'أ': 'T_1', 'إ': 'T_1',
+    'ب': 'T_2', 'ت': 'T_3', 'ث': 'T_4', 'ج': 'T_5',
+    'ح': 'T_6', 'خ': 'T_7', 'د': 'T_8', 'ذ': 'T_9',
+    'ر': 'T_10', 'ز': 'T_11', 'س': 'T_12', 'ش': 'T_13',
+    'ص': 'T_14', 'ض': 'T_15', 'ط': 'T_16', 'ظ': 'T_17',
+    'ع': 'T_18', 'غ': 'T_19', 'ف': 'T_20', 'ق': 'T_21',
+    'ك': 'T_22', 'ل': 'T_23', 'م': 'T_24', 'ن': 'T_25',
+    'ه': 'T_26', 'و': 'T_27', 'ي': 'T_28', 'ى': 'T_28',
+    ' ': 'T_33', 'ؤ': 'T_34', 'ء': 'T_31', 'ئ': 'T_0',
+    'ة': 'T_32'
+}
 
 @app.route('/')
 def index():
@@ -32,12 +51,9 @@ def convert_arabic_to_code():
     code_sequence = [f'({key_mapping.get(MAPPING_FIELDS[char], "")})' if char in MAPPING_FIELDS else ' ' for char in arabic_text]
     converted_code = ', '.join(code_sequence)
 
-    # Ensure non_convertible_found is unique
-    non_convertible_found = list(set(non_convertible_found))
-
     return jsonify({
         'result': converted_code,
-        'non_convertible': non_convertible_found  # Return the unique non-convertible characters
+        'non_convertible': list(set(non_convertible_found))
     })
 
 @app.route('/api/load_code', methods=['GET'])
@@ -61,7 +77,9 @@ def load_code():
     }
     
     if code_name in codes:
-        return jsonify(codes[code_name])
+        # Convert the code dictionary to the format expected by the frontend
+        converted_code = {MAPPING_FIELDS[k]: v for k, v in codes[code_name].items() if k in MAPPING_FIELDS}
+        return jsonify(converted_code)
     else:
         return jsonify({'error': 'Code not found'}), 404
 
